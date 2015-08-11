@@ -97,15 +97,15 @@
                 opacity:0
             },500);
             this.slideItem.each(function(k,v){
+                $(this).attr("data-index",k);
                 $(this).css({
                     "z-index":k,
-                    "opacity":0,
                     "width":_this.setting.width,
                     "height":_this.setting.height
                 });
             });
             this.slideItem.each(function(){
-                if($(this).css('z-index') == _this.slideItem.size()-1){
+                if($(this).attr('data-index') == _this.slideItem.size()-1){
                     $(this).animate({
                         opacity:1
                     },500);
